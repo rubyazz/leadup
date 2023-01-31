@@ -1,0 +1,61 @@
+
+{% extends 'base.html' %}
+
+{% block title %}<title>Home</title>{% endblock %}
+    
+
+{% block content %}
+<div class="container mt-5">
+  <div class="row row-cols-md-3">
+    <div class="col">
+      <div class="card mb-4">
+          <div class="card-header py-3">
+            <h4 class="my-0 fw-normal">Alnur</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">Python<small class="text-muted fw-light"></h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>Roadmap For developers</li>
+            </ul>
+            <A href="{% url 'python' %}"><button type="button" class="w-100 btn btn-lg btn-primary">Get started</button></A>
+          </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card mb-4">
+          <div class="card-header py-3">
+            <h4 class="my-0 fw-normal">Alnur</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">Java<small class="text-muted fw-light"></h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>Roadmap For developers</li>
+            </ul>
+            <A href="{% url 'python' %}"><button type="button" class="w-100 btn btn-lg btn-primary">Get started</button></A>
+          </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card mb-4">
+          <div class="card-header py-3">
+            <h4 class="my-0 fw-normal">Alnur</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">JavaScript<small class="text-muted fw-light"></h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>Roadmap For developers</li>
+            </ul>
+            <A href="{% url 'python' %}"><button type="button" class="w-100 btn btn-lg btn-primary">Get started</button></A>
+          </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+{% endblock %}
+
+
+
+
