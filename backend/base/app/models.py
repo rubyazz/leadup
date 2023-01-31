@@ -2,15 +2,19 @@ from django.db import models
 from ckeditor.fields import RichTextField
 
 
-class Language(models.Model):
-    name = models.CharField(max_length=200)
-
-    def __str__(self):
-        return self.name
+# class Python(models.Model):
+#     name = models.CharField(max_length=200)
+#
+#     def __str__(self):
+#         return self.name
+#
+#     class Meta:
+#         verbose_name = "Python"
+#         verbose_name_plural = "Python"
 
 
 class Chapter(models.Model):
-    whichLanguage = models.ForeignKey(Language, on_delete=models.CASCADE)
+    # whichLanguage = models.ForeignKey(Python, on_delete=models.CASCADE)
     name = models.CharField(max_length=150)
 
     def __str__(self):
