@@ -5,9 +5,8 @@ from .models import Chapter, Page
 
 
 def base(request):
-    a = Chapter.objects.all()
-    b = Page.objects.filter()
-    context = {'a':a, 'b': b}
-    return render(request, "base.html", context)
+    a = Chapter.objects.all().prefetch_related('page_set')
+    context = {'a':a}
+    return render(request, "python.html", context)
 
-# жеке жеке жасау керек джава бир апп дегендей и каждый теплейтты
+
