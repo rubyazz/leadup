@@ -66,25 +66,28 @@
 </svg>
 <body>
 <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Logo</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home</a>
+        <a class="nav-link" href="{% url 'main'%}">Main page</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="#">Features</a>
+        <a class="nav-link" href="#">Test</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="#">Pricing</a>
+        <a class="nav-link" href="#">Profile</a>
       </li>
-
     </ul>
+
   </div>
+  <div class="nav-item active">
+        <a class="nav-link" href="#">Login</a>
+      </div>
 </nav>
 </div>
 <div class="flex-shrink-0 p-3 bg-white" style="width: 280px;">
@@ -94,12 +97,12 @@
     </a>
       <ul class="list-unstyled ps-0">
         {% for chapter in a %}
-        <button class="btn btn-toggle align-items-center">
+        <button class="btn btn-toggle align-items-center rounded" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
             <h5>{{ chapter.name }}</h5>
         </button>
             {% for page in chapter.page_set.all %}
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="#" class="link-dark rounded">
+            <li><a href="{{ page.get_absolute_url }}" class="link-dark rounded">
               <div style="margin-left:50px;" class="ml-4">{{ page.name }}</div>
             </a></li>
           </ul>
