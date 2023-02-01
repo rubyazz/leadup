@@ -23,6 +23,7 @@ def python(request):
     
 class ViewPage(DetailView):
    model = Page
+   a = Chapter.objects.all().prefetch_related('page_set')
    context_object_name = 'view_news'
    template_name = 'page_detail.html'
 
