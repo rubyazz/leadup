@@ -5,43 +5,18 @@
     
 
 {% block content %}
-
-
-<div class="flex-shrink-0 p-3 bg-white" style="width: 280px;">
-    <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
-<!--      <svg class="bi me-2" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>-->
-      <span class="fs-5 fw-semibold">Leadup</span>
-    </a>
-      <ul class="list-unstyled ps-0">
-        {% for chapter in a %}
-        <button class="btn btn-toggle align-items-center rounded" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
-            <h5>{{ chapter.name }}</h5>
-        </button>
-            {% for page in chapter.page_set.all %}
-          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="{{ page.get_absolute_url }}" class="link-dark rounded">
-              <div style="margin-left:50px;" class="ml-4">{{ page.name }}</div>
-            </a></li>
-          </ul>
-            {% endfor %}
-      {% endfor %}
-    </ul>
-  </div>
-
-
+		<H1 class="obj_name">{{ object.name|safe }}</H1>
 		<div class="text">
 			{{ view_news.text|safe }}
-		</div>
-		<div class="ex">
-			{{ view_news.example|safe }}
 		</div>
 <style>
 	.text{
 		margin-top: 20px;
 	}
-	.ex{
-		margin-top: 20px;
+	.obj_name{
+		margin-top: 30px;
 	}
+
 </style>
 {% endblock %}
 

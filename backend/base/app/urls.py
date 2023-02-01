@@ -8,5 +8,5 @@ urlpatterns = [
     path('', views.main, name="main"),
     path('python/', views.python, name="python"),
     #path('pages/<slug>/', views.page_detail, name='page_detail'),
-    path('page/<int:pk>/', ViewPage.as_view(), name='view_news'),
+    path('python/page/<int:pk>/', ViewPage.as_view(), name='view_news'),
 ]

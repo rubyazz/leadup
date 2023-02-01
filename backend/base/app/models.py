@@ -16,7 +16,6 @@ class Page(models.Model):
     name = models.CharField(max_length=150)
     slug=models.SlugField(max_length=250, null=True, blank=True)
     text = RichTextField(blank=True, null=True)
-    example = RichTextField(blank=True, null=True)
 
     def __str__(self):
         return self.name
