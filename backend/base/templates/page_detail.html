@@ -5,11 +5,43 @@
     
 
 {% block content %}
-		<H1 class="obj_name">{{ object.name|safe }}</H1>
-		<div class="text">
-			{{ view_news.text|safe }}
-		</div>
+
+{% load tags %}
+
+	<div class="flex-shrink-0 p-3 bg-white" style="width: 280px;">
+    <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
+      <span class="fs-5 fw-semibold">Leadup</span>
+    </a>
+      <ul class="list-unstyled ps-0">
+        {% get_list_chapters as chapters %}
+        {% for item in chapters %}
+        <button class="btn btn-toggle align-items-center rounded" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
+            <h5>{{ item.name }}</h5>
+        </button>
+            {% for page in item.page_set.all %}
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="{{ page.get_absolute_url }}" class="link-dark rounded">
+              <div style="margin-left:50px;" class="ml-4">{{ page.name }}</div>
+            </a></li>
+          </ul>
+            {% endfor %}
+      {% endfor %}
+    </ul>
+  </div>
+
+		<DIV class="cool">
+			<H1 class="obj_name">{{ object.name|safe }}</H1>
+			<div class="text">
+				{{ view_news.text|safe }}
+			</div>
+		</DIV>
 <style>
+	.cool{
+		position: absolute;
+		top: 50px;
+		left: 430px;
+		right: 150px;
+	}
 	.text{
 		margin-top: 20px;
 	}
